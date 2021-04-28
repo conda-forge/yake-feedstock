@@ -1,5 +1,5 @@
 {% set name = "yake" %}
-{% set version = "0.4.7" %}
+{% set version = "0.4.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c67afd5f1313bc521f43709ff2efd67c12073b6f448bdf2f2de59b8566369f6a
+  sha256: 859f379ac49ca204a0bc1527217f937321e87b68287f81db9700fc1039fd529a
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - yake = yake.cli:keywords
 
@@ -37,14 +37,14 @@ test:
   requires:
     - pip
   commands:
-    - pip check    
+    - pip check
 
 about:
   home: https://github.com/LIAAD/yake
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
-  summary: 'Single-document unsupervised keyword extraction'
+  summary: Single-document unsupervised keyword extraction
   description: |
     Unsupervised Approach for Automatic Keyword Extraction using Text Features.
     YAKE! is a light-weight unsupervised automatic keyword extraction method which rests 
