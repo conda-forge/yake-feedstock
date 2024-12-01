@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 859f379ac49ca204a0bc1527217f937321e87b68287f81db9700fc1039fd529a
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - yake = yake.cli:keywords
@@ -19,11 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
     - pytest-runner
+    - setuptools
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - tabulate
     - click >=6.0
     - numpy
@@ -36,6 +37,7 @@ test:
     - yake
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
