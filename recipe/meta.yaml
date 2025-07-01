@@ -1,5 +1,5 @@
 {% set name = "yake" %}
-{% set version = "0.4.8" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 859f379ac49ca204a0bc1527217f937321e87b68287f81db9700fc1039fd529a
+  sha256: 3585f86a112f77aa2276d6585465e173a2c4a79d2889c8eee2bdc181c1aa27f8
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - yake = yake.cli:keywords
