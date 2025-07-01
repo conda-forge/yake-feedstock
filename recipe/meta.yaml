@@ -1,5 +1,6 @@
 {% set name = "yake" %}
 {% set version = "0.6.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -19,13 +20,13 @@ build:
 
 requirements:
   host:
-    - python 3.10
+    - python {{ python_min }}
     - hatchling
     - pip
     - pytest-runner
     - setuptools
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - tabulate
     - click >=6.0
     - numpy >=1.23.5
