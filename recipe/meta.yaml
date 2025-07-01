@@ -27,7 +27,7 @@ requirements:
     - python >={{ python_min }}
     - tabulate
     - click >=6.0
-    - numpy
+    - numpy >=1.23.5
     - segtok
     - networkx
     - jellyfish
