@@ -19,13 +19,13 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python 3.10
     - hatchling
     - pip
     - pytest-runner
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python >=3.10
     - tabulate
     - click >=6.0
     - numpy >=1.23.5
