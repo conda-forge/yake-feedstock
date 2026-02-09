@@ -1,5 +1,5 @@
 {% set name = "yake" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6c979a268b9a829781a2c52dae4f74b6843c849416aafe9dc42ca534d5ca35a5
+  sha256: 8778fb2832e58d26d838d6d7ac967b4947521f1fe8cdf23dd872636161fc53ed
 
 build:
   noarch: python
